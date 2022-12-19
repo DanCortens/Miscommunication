@@ -37,8 +37,6 @@ public class UIManager : MonoBehaviour
                     break;
             }
         }
-        print(gameState + timer);
-        print(maxExecutionTime * 0.25f);
         if(timer<=maxPrepTime/2 && timer> maxPrepTime * 0.25f && string.Equals(gameState, "Prep") || timer <= maxExecutionTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Execute"))
         {
             timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 1, 0);
