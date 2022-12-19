@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveDir;
     private Rigidbody rb;
-
+    public GameObject footstepControl;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +38,14 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer);
         GetInput();
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical")>0)
+        {
+            footstepControl.SetActive(true);
+        }
+        else
+        {
+            footstepControl.SetActive(false);
+        }
     }
     private void FixedUpdate()
     {
