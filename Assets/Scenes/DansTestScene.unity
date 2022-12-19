@@ -1288,8 +1288,8 @@ MonoBehaviour:
   timeText: {fileID: 815392413}
   gameState: 
   roomsClearedText: {fileID: 218727515}
-  maxPrepTime: 20
-  maxExecutionTime: 15
+  maxPrepTime: 15
+  maxExecutionTime: 10
 --- !u!4 &1688796642
 Transform:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     {
         timeText.GetComponent<TMPro.TextMeshProUGUI>().text = gameState + " phase: " + System.Math.Round(timer, 2) + "<br>seconds remaining";
         timer -= Time.deltaTime;
-        if(timer<=0 && string.Equals(gameState, "Prep")){
+        if(timer<=0){
             switch (gameState)
             {
                 case "Prep":
@@ -37,11 +37,13 @@ public class UIManager : MonoBehaviour
                     break;
             }
         }
-        if(timer<=maxPrepTime/2 && timer> maxPrepTime * 0.25f && string.Equals(gameState, "Prep") || timer <= maxExecutionTime / 2 && string.Equals(gameState, "Execute"))
+        print(gameState + timer);
+        print(maxExecutionTime * 0.25f);
+        if(timer<=maxPrepTime/2 && timer> maxPrepTime * 0.25f && string.Equals(gameState, "Prep") || timer <= maxExecutionTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Execute"))
         {
             timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 1, 0);
         }
-        else if(timer <= maxPrepTime *0.25f && string.Equals(gameState, "Prep") || timer <= maxExecutionTime * 0.25f && string.Equals(gameState, "Execute"))
+        else if(timer <= maxPrepTime *0.25f && string.Equals(gameState, "Prep") || (timer <= maxExecutionTime * 0.25f && string.Equals(gameState, "Execute")))
         {
             timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 0, 0);
         }
