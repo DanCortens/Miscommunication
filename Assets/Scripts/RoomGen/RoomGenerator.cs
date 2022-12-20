@@ -38,10 +38,12 @@ public class RoomGenerator : MonoBehaviour
                 GameObject newNode = Instantiate(roomNode, (new Vector3(i * offset.x, 0f, -j * offset.y) + transform.position), Quaternion.identity, transform);
                 newNode.GetComponent<RoomNode>().UpdatePanels(board[Mathf.FloorToInt(i+j*size.x)].status);
                 newNode.name = $"Node {i}-{j}";
+
                 if (puzzle == PuzzleType.Lever)
                     newNode.GetComponent<RoomNode>().SetColours(Color.red);
                 else if (puzzle == PuzzleType.Keypad)
                     newNode.GetComponent<RoomNode>().SetColours(Color.green);
+
                 if (j == 5)
                 {
                     if (i == 10)
