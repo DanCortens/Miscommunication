@@ -30,7 +30,8 @@ public class RoomGenerator : MonoBehaviour
     private void GenerateRoom()
     {
         PuzzleType puzzle = (PuzzleType)Random.Range(0, 2);
-        
+
+        List<Vector2Int> locations = RandomLocations();
         for (int i = 0; i < size.x; i++)
         {
             for (int j = 0; j < size.y; j++)
@@ -40,9 +41,15 @@ public class RoomGenerator : MonoBehaviour
                 newNode.name = $"Node {i}-{j}";
 
                 if (puzzle == PuzzleType.Lever)
+                {
                     newNode.GetComponent<RoomNode>().SetColours(Color.red);
+                }
+                    
                 else if (puzzle == PuzzleType.Keypad)
+                {
                     newNode.GetComponent<RoomNode>().SetColours(Color.green);
+                }
+                    
 
                 if (j == 5)
                 {
@@ -126,5 +133,24 @@ public class RoomGenerator : MonoBehaviour
         if (cell % size.x != 0 && !board[Mathf.FloorToInt(cell - 1)].visited)
             neighbours.Add(Mathf.FloorToInt(cell - 1));
         return neighbours;
+    }
+
+    private string SolvedString()
+    {
+        return "123";
+    }
+
+    private List<Vector2Int> RandomLocations()
+    {
+        List<Vector2Int> locs = new List<Vector2Int>();
+        for (int i = 0; i < 10; i++)
+        {
+            Vector2Int vec = new Vector2Int(Random.Range(0, (int)size.x), Random.Range(0, (int)size.y));
+            while (locs.Contains(vec))
+            {
+
+            }
+        }
+        return locs;
     }
 }
