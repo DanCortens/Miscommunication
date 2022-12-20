@@ -30,24 +30,42 @@ public class RoomGenerator : MonoBehaviour
     private void GenerateRoom()
     {
         PuzzleType puzzle = (PuzzleType)Random.Range(0, 2);
+        int roomType = 1;
+        int localRoomType;
 
         List<Vector2Int> locations = RandomLocations();
         for (int i = 0; i < size.x; i++)
         {
+            if (i < (size.x / 2))
+            {
+                roomType = 1;
+            }
+            else
+            {
+                roomType = 3;
+            }
             for (int j = 0; j < size.y; j++)
             {
+                if (j < (size.y / 2))
+                {
+                    localRoomType = roomType;
+                }
+                else
+                {
+                    localRoomType = roomType + 1;
+                }
                 GameObject newNode = Instantiate(roomNode, (new Vector3(i * offset.x, 0f, -j * offset.y) + transform.position), Quaternion.identity, transform);
                 newNode.GetComponent<RoomNode>().UpdatePanels(board[Mathf.FloorToInt(i+j*size.x)].status);
                 newNode.name = $"Node {i}-{j}";
 
                 if (puzzle == PuzzleType.Lever)
                 {
-                    newNode.GetComponent<RoomNode>().SetColours(Color.red);
+                    newNode.GetComponent<RoomNode>().SetColours(localRoomType);
                 }
                     
                 else if (puzzle == PuzzleType.Keypad)
                 {
-                    newNode.GetComponent<RoomNode>().SetColours(Color.green);
+                    newNode.GetComponent<RoomNode>().SetColours(localRoomType);
                 }
                     
 
