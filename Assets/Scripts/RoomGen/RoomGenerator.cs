@@ -36,7 +36,7 @@ public class RoomGenerator : MonoBehaviour
         List<Vector2Int> locations = RandomLocations();
         for (int i = 0; i < size.x; i++)
         {
-            if (i < (size.x / 2))
+            if (i < ((size.x - 1) / 2))
             {
                 roomType = 1;
             }
@@ -46,7 +46,7 @@ public class RoomGenerator : MonoBehaviour
             }
             for (int j = 0; j < size.y; j++)
             {
-                if (j < (size.y / 2))
+                if (j < ((size.y - 1) / 2))
                 {
                     localRoomType = roomType;
                 }
