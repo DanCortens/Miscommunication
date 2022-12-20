@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour
 {
+    public enum PuzzleType
+    {
+        Lever,
+        Keypad
+    }
     public class Cell
     {
         public bool visited = false;
@@ -24,16 +29,25 @@ public class RoomGenerator : MonoBehaviour
 
     private void GenerateRoom()
     {
+        PuzzleType puzzle = (PuzzleType)Random.Range(0, 2);
+        
         for (int i = 0; i < size.x; i++)
         {
             for (int j = 0; j < size.y; j++)
             {
-                GameObject newNode = Instantiate(roomNode, new Vector3(i * offset.x, 0f, -j * offset.y), Quaternion.identity, transform);
+                GameObject newNode = Instantiate(roomNode, (new Vector3(i * offset.x, 0f, -j * offset.y) + transform.position), Quaternion.identity, transform);
                 newNode.GetComponent<RoomNode>().UpdatePanels(board[Mathf.FloorToInt(i+j*size.x)].status);
                 newNode.name = $"Node {i}-{j}";
-                if (i == 10 && j == 5)
+                if (puzzle == PuzzleType.Lever)
+                    newNode.GetComponent<RoomNode>().SetColours(Color.red);
+                else if (puzzle == PuzzleType.Keypad)
+                    newNode.GetComponent<RoomNode>().SetColours(Color.green);
+                if (j == 5)
                 {
-                    newNode.GetComponent<RoomNode>().CreateExit();
+                    if (i == 10)
+                        newNode.GetComponent<RoomNode>().CreateExit();
+                    else if (!gameObject.name.Contains("Start") && i == 0)
+                        newNode.GetComponent<RoomNode>().CreateEntrance();
                 }
             }
         }

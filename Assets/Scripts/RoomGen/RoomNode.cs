@@ -16,4 +16,13 @@ public class RoomNode : MonoBehaviour
         panels[2].SetActive(false);
         door.SetActive(true);
     }
+    public void CreateEntrance()
+    {
+        panels[3].SetActive(false);
+    }
+    public void SetColours(Color colour)
+    {
+        foreach (GameObject p in panels)
+            p.GetComponent<Renderer>().material.color = colour;
+    }
 }
