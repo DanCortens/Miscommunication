@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveDir;
     private Rigidbody rb;
-    public GameObject footstepControl;
+    public AudioSource footstepControl;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,11 +40,12 @@ public class PlayerMovement : MonoBehaviour
         GetInput();
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical")>0)
         {
-            footstepControl.SetActive(true);
+            if (footstepControl.isPlaying == false)
+                footstepControl.Play();
         }
         else
         {
-            footstepControl.SetActive(false);
+            footstepControl.Stop();
         }
     }
     private void FixedUpdate()

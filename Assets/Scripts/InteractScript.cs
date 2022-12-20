@@ -14,11 +14,12 @@ public class InteractScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2, interactableMask))
+        if (Input.GetKeyDown("f"))
         {
-            if (Input.GetKeyDown("f"))
+            RaycastHit hit;
+            if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2, interactableMask))
             {
+            
 
             }
         }
