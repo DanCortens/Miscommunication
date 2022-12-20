@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7188333822964445520, guid: 33e31b1eedd8260459b781cd10b11505, type: 3}
       propertyPath: m_Name
-      value: RoomGenerator
+      value: StartRoomGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 7188333822964445522, guid: 33e31b1eedd8260459b781cd10b11505, type: 3}
       propertyPath: m_RootOrder
@@ -295,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 32586217787120267, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 32586217787120267, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
       propertyPath: m_LocalPosition.z

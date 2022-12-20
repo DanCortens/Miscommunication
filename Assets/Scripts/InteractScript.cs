@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractScript : MonoBehaviour
 {
-    public LayerMask interactableMask=8;
+    public LayerMask interactableMask;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class InteractScript : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2, interactableMask))
             {
-            
+                hit.transform.gameObject.GetComponent<Interactable>().Interact();
 
             }
         }
