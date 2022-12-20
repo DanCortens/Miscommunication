@@ -72,7 +72,7 @@ public class KeypadScript : MonoBehaviour
         {
             doorOpenFlag = true;
             source.PlayOneShot(doorOpen);
-            door.Play("Door");
+            door.Play("DoorOpen");
         }
     }
     public void Beep()
