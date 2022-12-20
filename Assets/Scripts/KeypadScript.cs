@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class KeypadScript : MonoBehaviour
 {
+    public AudioClip dink;
+    public static string leverList = "";
     bool doorOpenFlag = false;
     public AudioClip doorOpen;
     public AudioClip beep;
     AudioSource source;
+    string leverAnswer = "132";
     string answer = "12345";
     string playerAnswer = "";
     public GameObject keypadDisplay;
     public GameObject keypad;
     public Animator door;
+    bool leverSolved = false;
+    bool keypadSolved = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +28,14 @@ public class KeypadScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (leverList.Length >= 3)
+        {
+            if(string.Compare(leverList, leverAnswer)==0){
+                leverSolved = true;
+                source.PlayOneShot(dink);
+            }
+            leverList = "";
+        }
         if (Input.GetKeyDown("space"))
         {
             keypad.SetActive(false);
@@ -44,11 +56,10 @@ public class KeypadScript : MonoBehaviour
         }
         else if (number == 10)
         {
-            if(string.Equals(playerAnswer, answer) && doorOpenFlag==false)
+            if(string.Equals(playerAnswer, answer))
             {
-                source.PlayOneShot(doorOpen);
-                door.Play("Door");
-                doorOpenFlag = true;
+                source.PlayOneShot(dink);
+                keypadSolved = true;
               //Return success
             }
         }
@@ -57,6 +68,12 @@ public class KeypadScript : MonoBehaviour
             playerAnswer += number.ToString();
         }
         keypadDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = playerAnswer;
+        if(doorOpenFlag==false && keypadSolved && leverSolved)
+        {
+            doorOpenFlag = true;
+            source.PlayOneShot(doorOpen);
+            door.Play("Door");
+        }
     }
     public void Beep()
     {
