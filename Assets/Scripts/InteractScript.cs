@@ -39,7 +39,7 @@ public class InteractScript : MonoBehaviour
             interactMessage.SetActive(true);
             if (Input.GetKeyDown("f"))
             {
-/*                hit.collider.gameObject.GetComponent<Animator>().Play("LeverBackward");*/
+                hit.collider.gameObject.GetComponent<Animator>().Play("LeverBackward");
                 string num = hit.collider.name;
                 KeypadScript.leverList += num;
                 source.PlayOneShot(clang);

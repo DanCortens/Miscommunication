@@ -36,12 +36,18 @@ public class KeypadScript : MonoBehaviour
             }
             leverList = "";
         }
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("escape"))
         {
             keypad.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             PlayerCam.inMenu = false;
+        }
+        if (doorOpenFlag == false && keypadSolved && leverSolved)
+        {
+            doorOpenFlag = true;
+            source.PlayOneShot(doorOpen);
+            door.Play("DoorOpen");
         }
     }
     public void DisplayLayer()
@@ -68,12 +74,6 @@ public class KeypadScript : MonoBehaviour
             playerAnswer += number.ToString();
         }
         keypadDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = playerAnswer;
-        if(doorOpenFlag==false && keypadSolved && leverSolved)
-        {
-            doorOpenFlag = true;
-            source.PlayOneShot(doorOpen);
-            door.Play("DoorOpen");
-        }
     }
     public void Beep()
     {
