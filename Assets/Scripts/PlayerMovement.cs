@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static bool inMenu;
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float groundedDrag;
@@ -54,14 +55,18 @@ public class PlayerMovement : MonoBehaviour
     }
     private void GetInput()
     {
-        horzInput = Input.GetAxisRaw("Horizontal");
-        vertInput = Input.GetAxisRaw("Vertical");
-        if (Input.GetKey(KeyCode.Space) && canJump && grounded)
+        if (!inMenu)
         {
-            canJump = false;
-            Jump();
-            Invoke("CanJump", jumpCooldown);
+            horzInput = Input.GetAxisRaw("Horizontal");
+            vertInput = Input.GetAxisRaw("Vertical");
+            if (Input.GetKey(KeyCode.Space) && canJump && grounded)
+            {
+                canJump = false;
+                Jump();
+                Invoke("CanJump", jumpCooldown);
+            }
         }
+        
     }
     private void Movement()
     {

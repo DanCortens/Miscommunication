@@ -8,6 +8,7 @@ public class Door : Interactable
     private Animator anim;
     [SerializeField] private bool unlocked;
     [SerializeField] private Vector3 offset;
+    [SerializeField] private AudioSource openSound;
     public override void Interact()
     {
         if (unlocked)
@@ -25,6 +26,7 @@ public class Door : Interactable
     public void OpenDoor()
     {
         anim.SetTrigger("open");
+        openSound.Play();
         GameObject newRoom = Instantiate(nextRoom, transform.position + offset, Quaternion.identity);
         GetComponent<BoxCollider>().enabled = false;
     }
