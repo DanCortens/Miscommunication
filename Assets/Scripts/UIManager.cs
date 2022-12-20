@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
+    public GameObject effects;
     public GameObject timeText;
     public string gameState;
     public GameObject roomsClearedText;
@@ -17,6 +18,7 @@ public class UIManager : MonoBehaviour
         timer = maxPrepTime;
         gameState = "Prep";
         ChangeRoomText();
+        effects.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,15 +32,15 @@ public class UIManager : MonoBehaviour
                 case "Prep":
                     gameState = "Execute";
                     timer = maxExecutionTime;
+                    effects.SetActive(true);
                     break;
                 case "Execute":
                     gameState = "Prep";
                     timer = maxPrepTime;
+                    effects.SetActive(false);
                     break;
             }
         }
-        print(gameState + timer);
-        print(maxExecutionTime * 0.25f);
         if(timer<=maxPrepTime/2 && timer> maxPrepTime * 0.25f && string.Equals(gameState, "Prep") || timer <= maxExecutionTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Execute"))
         {
             timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 1, 0);

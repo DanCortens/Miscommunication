@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
+    public static bool inMenu;
     [SerializeField] private float sensX; //horizontal mouse sensitivity
     [SerializeField] private float sensY; //vertical    ^^     ^^ 
 
@@ -23,13 +24,16 @@ public class PlayerCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensX;
+        if (inMenu == false)
+        {
+            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensX;
 
-        yRot += mouseX;
-        xRot = Mathf.Clamp(xRot - mouseY, -90f,90f);
-        transform.rotation = Quaternion.Euler(xRot, yRot, 0f);
-        orientation.rotation = Quaternion.Euler(0f, yRot, 0f);
-        transform.position = playerPos.position + new Vector3(0f, 0.25f);
+            yRot += mouseX;
+            xRot = Mathf.Clamp(xRot - mouseY, -90f, 90f);
+            transform.rotation = Quaternion.Euler(xRot, yRot, 0f);
+            orientation.rotation = Quaternion.Euler(0f, yRot, 0f);
+            transform.position = playerPos.position + new Vector3(0f, 0.25f);
+        }
     }
 }

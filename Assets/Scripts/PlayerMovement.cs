@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer);
         GetInput();
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical")>0)
+        if (Mathf.Abs( Input.GetAxis("Horizontal")) > 0 || Mathf.Abs(Input.GetAxis("Vertical"))>0)
         {
             if (footstepControl.isPlaying == false)
                 footstepControl.Play();
