@@ -11,11 +11,16 @@ TagManager:
   - 
   - Water
   - UI
+  - Ground
+  - Player
+  - Interactable
+<<<<<<< Updated upstream
+  - Lever
+  - Symbols
+=======
+  - Shape
   - 
-  - 
-  - 
-  - 
-  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 
