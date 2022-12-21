@@ -300,7 +300,7 @@ public class RoomGenerator : MonoBehaviour
             FindObjectOfType<UIManager>().GameOver();
             return false;
         }
-        return false;
+        return true;
     }
 
     private Vector2Int RandomLocation()

@@ -138,6 +138,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5803147862369844894, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803147862369844895, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.263293
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803147862369844895, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.263293
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803147862369844895, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.263293
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803147862369844895, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.1219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803147862369844895, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -87.523
+      objectReference: {fileID: 0}
     - target: {fileID: 5803147863051773820, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -599,6 +623,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 32586217699694386, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
+      propertyPath: sensX
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 32586217699694386, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
+      propertyPath: sensY
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 32586217787120266, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
       propertyPath: m_Name
       value: Player
