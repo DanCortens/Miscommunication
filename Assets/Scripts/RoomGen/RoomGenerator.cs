@@ -271,12 +271,8 @@ public class RoomGenerator : MonoBehaviour
             }
         }
     }
-    public bool CheckInput(string inp)
+    public void CheckInput(string inp)
     {
-<<<<<<< HEAD
-=======
-/*        Debug.Log($"input: {inp} solutionstep: {solutionSteps[currStep]}");*/
->>>>>>> origin/Final
         //if the player enters too many inputs, they lose
         if (currStep >= solutionSteps.Count)
         {
@@ -293,17 +289,13 @@ public class RoomGenerator : MonoBehaviour
                 Door[] doors = FindObjectsOfType<Door>();
                 foreach (Door d in doors)
                     d.UnlockDoor();
-                FindObjectOfType<UIManager>().ResetTime();
-                return true;
             }
         }
         else
         {
             //game over
             FindObjectOfType<UIManager>().GameOver();
-            return false;
         }
-        return false;
     }
 
     private Vector2Int RandomLocation()

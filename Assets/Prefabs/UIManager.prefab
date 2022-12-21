@@ -859,7 +859,7 @@ RectTransform:
   m_GameObject: {fileID: 5803147862369844894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.198701, y: 11.198701, z: 11.198701}
+  m_LocalScale: {x: 5.5993505, y: 5.5993505, z: 5.5993505}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5803147862814202748}
@@ -1909,8 +1909,6 @@ MonoBehaviour:
   deathSound: {fileID: 1292952932}
   maxPrepTime: 15
   maxExecutionTime: 10
-  success: {fileID: 0}
-  shutdown: {fileID: 0}
 --- !u!82 &1292952932
 AudioSource:
   m_ObjectHideFlags: 0

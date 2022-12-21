@@ -11,11 +11,7 @@ GameObject:
   - component: {fileID: 7426151523704322754}
   - component: {fileID: 1486951987555594115}
   - component: {fileID: 5240576675932548679}
-<<<<<<< HEAD
   m_Layer: 9
-=======
-  m_Layer: 10
->>>>>>> origin/Final
   m_Name: Wall_Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,11 +94,7 @@ GameObject:
   - component: {fileID: 628189168363046916}
   - component: {fileID: 2523148755658047362}
   - component: {fileID: 7405009820259226310}
-<<<<<<< HEAD
   m_Layer: 9
-=======
-  m_Layer: 10
->>>>>>> origin/Final
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,11 +209,7 @@ GameObject:
   - component: {fileID: 5281596614712715459}
   - component: {fileID: 9143393243572234086}
   - component: {fileID: 6415145672215139244}
-<<<<<<< HEAD
   m_Layer: 9
-=======
-  m_Layer: 10
->>>>>>> origin/Final
   m_Name: Wall_Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
