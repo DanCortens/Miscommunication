@@ -17,8 +17,9 @@ public class InteractScript : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 1000, interactableMask))
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 4, interactableMask))
         {
+            Debug.Log($"Dist: {hit.distance}");
             interactMessage.SetActive(true);
             if (Input.GetKeyDown("f"))
             {

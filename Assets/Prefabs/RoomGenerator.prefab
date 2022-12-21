@@ -44,8 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89708f71b53d9547ae0ad3cf9fb30ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 11, y: 11}
+  size: {x: 5, y: 5}
   startPos: 0
   roomNode: {fileID: 4749391209670612596, guid: 57544b02425475645b72107f52f07712, type: 3}
   room: {fileID: 7188333822964445520}
-  offset: {x: 8, y: 8}
+  offset: {x: 10.01, y: 10.01}
+  rType: 0
+  currStep: 0
+  solutionSteps: []
+  puzzle: {fileID: 624697772151736492, guid: 21bb0f8e7f0b1af45b1ddd90749bd50a, type: 3}

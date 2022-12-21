@@ -18,7 +18,7 @@ public class Lever : Interactable
 
     private void TurnLever()
     {
-        if (!AnimatorIsPlaying() && !connectedList.solved)
+        if (!AnimatorIsPlaying())
         {
             anim.SetTrigger("swap");
             leverSound.Play();

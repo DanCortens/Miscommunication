@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inMenu = false;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
@@ -59,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         {
             horzInput = Input.GetAxisRaw("Horizontal");
             vertInput = Input.GetAxisRaw("Vertical");
-            if (Input.GetKey(KeyCode.Space) && canJump && grounded)
+            if (Input.GetKeyDown(KeyCode.Space) && canJump && grounded)
             {
                 canJump = false;
                 Jump();
