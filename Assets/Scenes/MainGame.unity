@@ -575,6 +575,14 @@ PrefabInstance:
       propertyPath: playerHeight
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 55532987120806199, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 55532987120806199, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3601333034879738662, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
       propertyPath: m_Enabled
       value: 1
