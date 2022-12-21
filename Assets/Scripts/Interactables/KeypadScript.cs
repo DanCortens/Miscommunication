@@ -45,7 +45,15 @@ public class KeypadScript : Interactable
         else if (number == 10)
         {
             //send string to room to check if valid
-            rg.CheckInput(playerAnswer);
+            bool isCorrect=rg.CheckInput(playerAnswer);
+            if (isCorrect)
+            {
+                keypad.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                PlayerCam.inMenu = false;
+                PlayerMovement.inMenu = false;
+            }
         }
         else
         {

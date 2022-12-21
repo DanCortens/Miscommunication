@@ -16,9 +16,6 @@ GameObject:
 =======
   m_Layer: 10
 >>>>>>> origin/Final
-=======
-  m_Layer: 0
->>>>>>> parent of 2adc93f (Final)
   m_Name: X_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,9 +105,6 @@ GameObject:
 =======
   m_Layer: 10
 >>>>>>> origin/Final
-=======
-  m_Layer: 0
->>>>>>> parent of 2adc93f (Final)
   m_Name: X_Inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,9 +192,6 @@ GameObject:
 =======
   m_Layer: 10
 >>>>>>> origin/Final
-=======
-  m_Layer: 0
->>>>>>> parent of 2adc93f (Final)
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

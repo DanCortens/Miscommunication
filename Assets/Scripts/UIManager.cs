@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    AudioSource source;
     public GameObject effects;
     public GameObject timeText;
     public string gameState;
@@ -19,13 +20,20 @@ public class UIManager : MonoBehaviour
     public float maxPrepTime;
     public float maxExecutionTime;
     private int roomsCleared = 0;
+    public AudioClip success;
+    public AudioClip shutdown;
+    LayerMask everything = -1;
+    LayerMask onlyThings;
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
+        onlyThings = LayerMask.GetMask("Default") | LayerMask.GetMask("Ground") | LayerMask.GetMask("Interactable") | LayerMask.GetMask("Lever");
         timer = maxPrepTime;
-        gameState = "Prep";
+        gameState = "Colour Camera Operational";
         ChangeRoomText();
         effects.SetActive(false);
+        Camera.main.cullingMask = everything;
     }
 
     // Update is called once per frame
@@ -33,13 +41,12 @@ public class UIManager : MonoBehaviour
     {
         if (gameState != "GameOver")
         {
-            timeText.GetComponent<TMPro.TextMeshProUGUI>().text = gameState + " phase: " + System.Math.Round(timer, 2) + "<br>seconds remaining";
+            timeText.GetComponent<TMPro.TextMeshProUGUI>().text = gameState +": " + System.Math.Round(timer, 2) + "<br>seconds remaining";
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
                 switch (gameState)
                 {
-<<<<<<< HEAD
                     case "Colour Camera Operational":
                         source.PlayOneShot(shutdown);
                         Camera.main.cullingMask = onlyThings;
@@ -50,34 +57,18 @@ public class UIManager : MonoBehaviour
                     case "Battery Depleted: Backup Camera Online<br>Time to failure":
                         Camera.main.cullingMask = everything;
                         gameState = "Colour Camera Operational";
-=======
-                    case "Prep":
-                        gameState = "Execute";
-                        timer = maxExecutionTime;
-                        effects.SetActive(true);
-                        break;
-                    case "Execute":
-                        gameState = "Prep";
->>>>>>> parent of 2adc93f (Final)
                         timer = maxPrepTime;
                         effects.SetActive(false);
+                        GameOver();
                         break;
 
                 }
             }
-<<<<<<< HEAD
             if (timer <= maxPrepTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Colour Camera Operational") || timer <= maxExecutionTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Battery Depleted: Backup Camera Online<br>Time to failure"))
             {
                 timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 1, 0);
             }
             else if (timer <= maxPrepTime * 0.25f && string.Equals(gameState, "Colour Camera Operational") || (timer <= maxExecutionTime * 0.25f && string.Equals(gameState, "Battery Depleted: Backup Camera Online<br>Time to failure")))
-=======
-            if (timer <= maxPrepTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Prep") || timer <= maxExecutionTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Execute"))
-            {
-                timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 1, 0);
-            }
-            else if (timer <= maxPrepTime * 0.25f && string.Equals(gameState, "Prep") || (timer <= maxExecutionTime * 0.25f && string.Equals(gameState, "Execute")))
->>>>>>> parent of 2adc93f (Final)
             {
                 timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 0, 0);
             }
@@ -97,7 +88,6 @@ public class UIManager : MonoBehaviour
         roomsCleared++;
         ChangeRoomText();
     }
-<<<<<<< HEAD
     public void ResetTime()
     {
         Camera.main.cullingMask = everything;
@@ -105,8 +95,6 @@ public class UIManager : MonoBehaviour
         timer = maxPrepTime;
         effects.SetActive(false);
     }
-=======
->>>>>>> parent of 2adc93f (Final)
     public void GameOver()
     {
         gameState = "GameOver";

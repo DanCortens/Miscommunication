@@ -146,7 +146,6 @@ PrefabInstance:
       propertyPath: effects
       value: 
       objectReference: {fileID: 1177291073}
-<<<<<<< HEAD
     - target: {fileID: 5803147863051773821, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
       propertyPath: success
       value: 
@@ -163,8 +162,6 @@ PrefabInstance:
       propertyPath: maxExecutionTime
       value: 20
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 2adc93f (Final)
     - target: {fileID: 5803147863051773822, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -209,7 +206,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 5803147863352251780, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0.5
@@ -282,8 +278,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -131
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 2adc93f (Final)
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f6ea9fb2d371074aa4ef61461ff85ee, type: 3}
 --- !u!1 &250221059 stripped
@@ -664,6 +658,10 @@ PrefabInstance:
     - target: {fileID: 32586217847761346, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 32586219367805062, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 32586219367805115, guid: 5aa62bda58e1ce644be09c48f9605a1b, type: 3}
       propertyPath: moveSpeed
