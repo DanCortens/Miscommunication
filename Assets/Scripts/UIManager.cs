@@ -19,11 +19,15 @@ public class UIManager : MonoBehaviour
     public float maxPrepTime;
     public float maxExecutionTime;
     private int roomsCleared = 0;
+    public AudioClip success;
+    public AudioClip shutdown;
+    LayerMask everything = -1;
+    LayerMask onlyThings;
     // Start is called before the first frame update
     void Start()
     {
         timer = maxPrepTime;
-        gameState = "Prep";
+        gameState = "Colour Camera Operational";
         ChangeRoomText();
         effects.SetActive(false);
     }
@@ -39,24 +43,28 @@ public class UIManager : MonoBehaviour
             {
                 switch (gameState)
                 {
-                    case "Prep":
-                        gameState = "Execute";
+                    case "Colour Camera Operational":
+                        source.PlayOneShot(shutdown);
+                        Camera.main.cullingMask = onlyThings;
+                        gameState = "Battery Depleted: Backup Camera Online<br>Time to failure";
                         timer = maxExecutionTime;
                         effects.SetActive(true);
                         break;
-                    case "Execute":
-                        gameState = "Prep";
+                    case "Battery Depleted: Backup Camera Online<br>Time to failure":
+                        Camera.main.cullingMask = everything;
+                        gameState = "Colour Camera Operational";
                         timer = maxPrepTime;
                         effects.SetActive(false);
+                        GameOver();
                         break;
 
                 }
             }
-            if (timer <= maxPrepTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Prep") || timer <= maxExecutionTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Execute"))
+            if (timer <= maxPrepTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Colour Camera Operational") || timer <= maxExecutionTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Battery Depleted: Backup Camera Online<br>Time to failure"))
             {
                 timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 1, 0);
             }
-            else if (timer <= maxPrepTime * 0.25f && string.Equals(gameState, "Prep") || (timer <= maxExecutionTime * 0.25f && string.Equals(gameState, "Execute")))
+            else if (timer <= maxPrepTime * 0.25f && string.Equals(gameState, "Colour Camera Operational") || (timer <= maxExecutionTime * 0.25f && string.Equals(gameState, "Battery Depleted: Backup Camera Online<br>Time to failure")))
             {
                 timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 0, 0);
             }
@@ -75,6 +83,13 @@ public class UIManager : MonoBehaviour
     {
         roomsCleared++;
         ChangeRoomText();
+    }
+    public void ResetTime()
+    {
+        Camera.main.cullingMask = everything;
+        gameState = "Colour Camera Operational";
+        timer = maxPrepTime;
+        effects.SetActive(false);
     }
     public void GameOver()
     {
