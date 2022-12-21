@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 4129577575801223569}
   - component: {fileID: 6480822570480441474}
   - component: {fileID: 8894076392006142783}
+<<<<<<< HEAD
   m_Layer: 9
+=======
+  m_Layer: 10
+>>>>>>> origin/Final
   m_Name: X_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +100,11 @@ GameObject:
   - component: {fileID: 2727445738013660792}
   - component: {fileID: 6507420573017813638}
   - component: {fileID: 1701897611257566852}
+<<<<<<< HEAD
   m_Layer: 9
+=======
+  m_Layer: 10
+>>>>>>> origin/Final
   m_Name: X_Inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +187,11 @@ GameObject:
   - component: {fileID: 2450437350420876669}
   - component: {fileID: 4235934142165973287}
   - component: {fileID: 7237289467663366651}
+<<<<<<< HEAD
   m_Layer: 9
+=======
+  m_Layer: 10
+>>>>>>> origin/Final
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
