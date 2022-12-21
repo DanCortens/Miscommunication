@@ -12,10 +12,14 @@ GameObject:
   - component: {fileID: 643844343378309884}
   - component: {fileID: 5040113798368464757}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Layer: 9
 =======
   m_Layer: 10
 >>>>>>> origin/Final
+=======
+  m_Layer: 0
+>>>>>>> parent of 2adc93f (Final)
   m_Name: BoxLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,10 +103,14 @@ GameObject:
   - component: {fileID: 8352149156027951860}
   - component: {fileID: 4122880534266166433}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Layer: 9
 =======
   m_Layer: 10
 >>>>>>> origin/Final
+=======
+  m_Layer: 0
+>>>>>>> parent of 2adc93f (Final)
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,10 +196,14 @@ GameObject:
   - component: {fileID: 6498417774172324298}
   - component: {fileID: 9027327345531568162}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Layer: 9
 =======
   m_Layer: 10
 >>>>>>> origin/Final
+=======
+  m_Layer: 0
+>>>>>>> parent of 2adc93f (Final)
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

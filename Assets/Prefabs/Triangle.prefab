@@ -12,10 +12,14 @@ GameObject:
   - component: {fileID: 2343454931200397186}
   - component: {fileID: 6805704727182620358}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Layer: 9
 =======
   m_Layer: 10
 >>>>>>> origin/Final
+=======
+  m_Layer: 0
+>>>>>>> parent of 2adc93f (Final)
   m_Name: TriangleLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,10 +103,14 @@ GameObject:
   - component: {fileID: 7520707857737305257}
   - component: {fileID: 1664414316107283902}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Layer: 9
 =======
   m_Layer: 10
 >>>>>>> origin/Final
+=======
+  m_Layer: 0
+>>>>>>> parent of 2adc93f (Final)
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,10 +196,14 @@ GameObject:
   - component: {fileID: 5086285009924879936}
   - component: {fileID: 1932865096190806669}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Layer: 9
 =======
   m_Layer: 10
 >>>>>>> origin/Final
+=======
+  m_Layer: 0
+>>>>>>> parent of 2adc93f (Final)
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
