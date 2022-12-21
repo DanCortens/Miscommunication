@@ -50,11 +50,11 @@ public class UIManager : MonoBehaviour
                     case "Colour Camera Operational":
                         source.PlayOneShot(shutdown);
                         Camera.main.cullingMask = onlyThings;
-                        gameState = "Battery Depleted: Backup Camera Online<br>Time to failure: ";
+                        gameState = "Battery Depleted: Backup Camera Online<br>Time to failure";
                         timer = maxExecutionTime;
                         effects.SetActive(true);
                         break;
-                    case "Battery Depleted: Backup Camera Online<br>Time to failure: ":
+                    case "Battery Depleted: Backup Camera Online<br>Time to failure":
                         Camera.main.cullingMask = everything;
                         gameState = "Colour Camera Operational";
                         timer = maxPrepTime;
@@ -64,11 +64,11 @@ public class UIManager : MonoBehaviour
 
                 }
             }
-            if (timer <= maxPrepTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Colour Camera Operational") || timer <= maxExecutionTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Battery Depleted: Backup Camera Online<br>Time to failure: "))
+            if (timer <= maxPrepTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Colour Camera Operational") || timer <= maxExecutionTime / 2 && timer > maxPrepTime * 0.25f && string.Equals(gameState, "Battery Depleted: Backup Camera Online<br>Time to failure"))
             {
                 timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 1, 0);
             }
-            else if (timer <= maxPrepTime * 0.25f && string.Equals(gameState, "Colour Camera Operational") || (timer <= maxExecutionTime * 0.25f && string.Equals(gameState, "Battery Depleted: Backup Camera Online<br>Time to failure: ")))
+            else if (timer <= maxPrepTime * 0.25f && string.Equals(gameState, "Colour Camera Operational") || (timer <= maxExecutionTime * 0.25f && string.Equals(gameState, "Battery Depleted: Backup Camera Online<br>Time to failure")))
             {
                 timeText.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1, 0, 0);
             }
@@ -90,10 +90,10 @@ public class UIManager : MonoBehaviour
     }
     public void ResetTime()
     {
-        Camera.main.cullingMask = onlyThings;
-        gameState = "Battery Depleted: Backup Camera Online<br>Time to failure: ";
+        Camera.main.cullingMask = everything;
+        gameState = "Colour Camera Operational";
         timer = maxPrepTime;
-        effects.SetActive(true);
+        effects.SetActive(false);
     }
     public void GameOver()
     {
