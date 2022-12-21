@@ -273,7 +273,6 @@ public class RoomGenerator : MonoBehaviour
     }
     public void CheckInput(string inp)
     {
-        Debug.Log($"input: {inp} solutionstep: {solutionSteps[currStep]}");
         //if the player enters too many inputs, they lose
         if (currStep >= solutionSteps.Count)
         {
