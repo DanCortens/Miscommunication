@@ -28,7 +28,7 @@ public class PlayerCam : MonoBehaviour
         if (inMenu == false)
         {
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensX;
 
             yRot += mouseX;
             xRot = Mathf.Clamp(xRot - mouseY, -90f, 90f);
