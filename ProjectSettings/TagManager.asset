@@ -14,8 +14,13 @@ TagManager:
   - Ground
   - Player
   - Interactable
+<<<<<<< Updated upstream
   - Lever
   - Symbols
+=======
+  - Shape
+  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 
