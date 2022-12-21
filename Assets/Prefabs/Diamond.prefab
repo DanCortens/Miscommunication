@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4361069376623992762}
   - component: {fileID: 8511590903097420750}
   - component: {fileID: 7858398069455773052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 5153099699452422735}
   - component: {fileID: 4577349170676269039}
   - component: {fileID: 4610989091271761497}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DiamondLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 2739223825371737475}
   - component: {fileID: 8665784883315688522}
   - component: {fileID: 1655319095309784129}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Diamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
